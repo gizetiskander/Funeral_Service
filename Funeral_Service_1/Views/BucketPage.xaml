@@ -9,6 +9,19 @@
       Title="BucketPage">
 
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Height="144" Margin="458,10,0,0" VerticalAlignment="Top" Width="136" Source="Res/Icons/bask.png"/>
+        <ListBox x:Name="Basket" HorizontalAlignment="Left"   Height="262" Margin="255,154,0,0" VerticalAlignment="Top" Width="518" Background="White" Foreground="Black" BorderBrush="#B53232" BorderThickness="3" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="Basket_StackPanel" Margin="5" Orientation="Horizontal">
+                        <TextBlock x:Name="Basket_Id" Text="{Binding ID_Basket}" HorizontalAlignment="Left" Margin="5,5,100,10"/>
+                        <TextBlock x:Name="Basket_count" Text="{Binding Count}" HorizontalAlignment="Left"  Margin="5,5,90,10"/>
+                        <TextBlock x:Name="Service_id" Text="{Binding ID_Service}" HorizontalAlignment="Left"  Margin="5,5,50,10"/>
+                        <TextBlock x:Name="Date" Text="{Binding Date}" HorizontalAlignment="Left"  Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="265,159,0,0" TextWrapping="Wrap" Text="Номер заказа         Кол-во              Номер услуги      Дата " Background="White" VerticalAlignment="Top" Width="496"/>
     </Grid>
 </Page>

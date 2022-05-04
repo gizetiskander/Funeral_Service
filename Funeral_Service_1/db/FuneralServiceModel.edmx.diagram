@@ -19,6 +19,7 @@
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket_Product" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket_Service" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Graveyard_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket__User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

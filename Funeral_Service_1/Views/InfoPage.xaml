@@ -19,7 +19,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="243,213,0,0" TextWrapping="Wrap" FontSize="10" Text="Прозрачное ценообразование. Итоговую стоимость заказчик видит уже при заключении договора. Тарифы размещены на сайте агентства." VerticalAlignment="Top" Width="548"/>
         <TextBlock HorizontalAlignment="Left" Margin="243,258,0,0" TextWrapping="Wrap" FontSize="10" Text="Собственное производство ритуальных товаров. Наша продукция поставляется без посреднических наценок и торговых надбавок." VerticalAlignment="Top" Width="536"/>
         <Grid Margin="219,290,0,0">
-            <m:Map Mode="Road" ZoomLevel="16" Center="55.79448422764742, 49.15726304030681" Margin="24,0,0,0">
+            <m:Map Mode="Road" ZoomLevel="16" Center="55.79448422764742, 49.15726304030681" Margin="10,0,0,0">
                 <Canvas
                 m:MapLayer.Position="55.79448422764742, 49.15726304030681"
                 m:MapLayer.PositionOrigin="BottomCenter" Width="30" Height="30">

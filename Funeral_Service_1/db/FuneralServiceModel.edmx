@@ -26,6 +26,8 @@
           <Property Name="ID_Service" Type="int" />
           <Property Name="ID_Graveyard" Type="int" />
           <Property Name="ID_Product" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ID_User" Type="int" />
         </EntityType>
         <EntityType Name="Graveyard">
           <Key>
@@ -88,6 +90,18 @@
             </Principal>
             <Dependent Role="_User">
               <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket__User">
+          <End Role="_User" Type="Self._User" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="_User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ID_User" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -164,6 +178,10 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="_User" EntitySet="_User" />
           </AssociationSet>
+          <AssociationSet Name="FK_Basket__User" Association="Self.FK_Basket__User">
+            <End Role="_User" EntitySet="_User" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
           <AssociationSet Name="FK_Basket_Graveyard" Association="Self.FK_Basket_Graveyard">
             <End Role="Graveyard" EntitySet="Graveyard" />
             <End Role="Basket" EntitySet="Basket" />
@@ -202,6 +220,7 @@
           <Property Name="ID_Role" Type="Int32" />
           <NavigationProperty Name="Role" Relationship="Self.FK__User_Role" FromRole="C_User" ToRole="Role" />
           <NavigationProperty Name="Payment" Relationship="Self.FK_Payment__User" FromRole="C_User" ToRole="Payment" />
+          <NavigationProperty Name="Basket" Relationship="Funeral_Service_dbModel.FK_Basket__User" FromRole="C_User" ToRole="Basket" />
         </EntityType>
         <EntityType Name="Basket">
           <Key>
@@ -215,6 +234,9 @@
           <NavigationProperty Name="Graveyard" Relationship="Self.FK_Basket_Graveyard" FromRole="Basket" ToRole="Graveyard" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Basket_Product" FromRole="Basket" ToRole="Product" />
           <NavigationProperty Name="Service" Relationship="Self.FK_Basket_Service" FromRole="Basket" ToRole="Service" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ID_User" Type="Int32" />
+          <NavigationProperty Name="C_User" Relationship="Funeral_Service_dbModel.FK_Basket__User" FromRole="Basket" ToRole="C_User" />
         </EntityType>
         <EntityType Name="Graveyard">
           <Key>
@@ -380,7 +402,23 @@
             <End Role="Service" EntitySet="Service" />
             <End Role="Graveyard" EntitySet="Graveyard" />
           </AssociationSet>
+          <AssociationSet Name="FK_Basket__User" Association="Funeral_Service_dbModel.FK_Basket__User">
+            <End Role="C_User" EntitySet="C_User" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Basket__User">
+          <End Type="Funeral_Service_dbModel.C_User" Role="C_User" Multiplicity="0..1" />
+          <End Type="Funeral_Service_dbModel.Basket" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -403,6 +441,8 @@
           <EntitySetMapping Name="Basket">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Basket">
               <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ID_Basket" ColumnName="ID_Basket" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />

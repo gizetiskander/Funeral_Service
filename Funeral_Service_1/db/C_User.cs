@@ -18,6 +18,7 @@ namespace Funeral_Service_1.db
         public C_User()
         {
             this.Payment = new HashSet<Payment>();
+            this.Basket = new HashSet<Basket>();
         }
     
         public int ID_User { get; set; }
@@ -31,5 +32,7 @@ namespace Funeral_Service_1.db
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payment> Payment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Basket> Basket { get; set; }
     }
 }

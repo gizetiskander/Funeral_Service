@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Funeral_Service_1.Views
 {
     /// <summary>
@@ -24,30 +25,30 @@ namespace Funeral_Service_1.Views
         {
             InitializeComponent();
         }
-
+  
         private void btn_Grob_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new OrganizationPage());
         }
 
         private void btn_Katafal_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new HearsePage());
         }
 
         private void btn_Kolba_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EmbalmingPage());
         }
 
         private void btn_Banka_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new CremauiaPage());
         }
 
         private void btn_Grave_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new GravePage());
         }
     }
 }

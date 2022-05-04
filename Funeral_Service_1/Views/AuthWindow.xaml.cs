@@ -48,10 +48,6 @@ namespace Funeral_Service_1.Views
                         main.Show();
                     }
                 }
-                if (user.Password != null)
-                {
-                    MessageBox.Show("Некорректные данные!");
-                }
             }
         }
     }
