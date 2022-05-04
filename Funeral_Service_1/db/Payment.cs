@@ -19,6 +19,7 @@ namespace Funeral_Service_1.db
         public string Method_Payment { get; set; }
         public Nullable<int> Card { get; set; }
         public Nullable<int> ID_User { get; set; }
+        public Nullable<int> ID_PaymentType { get; set; }
     
         public virtual C_User C_User { get; set; }
     }

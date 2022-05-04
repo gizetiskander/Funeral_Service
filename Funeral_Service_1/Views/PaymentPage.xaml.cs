@@ -25,6 +25,14 @@ namespace Funeral_Service_1.Views
             InitializeComponent();
         }
 
-     
+        private void btn_Pay_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainPage());
+        }
     }
 }

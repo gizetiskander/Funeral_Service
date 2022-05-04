@@ -47,6 +47,7 @@
           <Property Name="Method_Payment" Type="varchar" MaxLength="50" />
           <Property Name="Card" Type="int" />
           <Property Name="ID_User" Type="int" />
+          <Property Name="ID_PaymentType" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -259,6 +260,7 @@
           <Property Name="Card" Type="Int32" />
           <Property Name="ID_User" Type="Int32" />
           <NavigationProperty Name="C_User" Relationship="Self.FK_Payment__User" FromRole="Payment" ToRole="C_User" />
+          <Property Name="ID_PaymentType" Type="Int32" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -464,6 +466,7 @@
           <EntitySetMapping Name="Payment">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Payment">
               <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="ID_PaymentType" ColumnName="ID_PaymentType" />
                 <ScalarProperty Name="ID_Payment" ColumnName="ID_Payment" />
                 <ScalarProperty Name="Date_Payment" ColumnName="Date_Payment" />
                 <ScalarProperty Name="Method_Payment" ColumnName="Method_Payment" />
