@@ -1,0 +1,62 @@
+﻿<Page x:Class="Funeral_Service_1.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Funeral_Service_1.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+    <Page.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="252" Margin="234,118,0,0" VerticalAlignment="Top" Width="566" Source="Res/Background/MainBackground.png"/>
+        <StackPanel HorizontalAlignment="Left" Height="36" Margin="234,414,0,0" VerticalAlignment="Top" Background="#F2E9E9" Width="427">
+            <TextBlock Text="В приложение представлена справочная информация о работе государственных и муниципальных служб и организаций." FontSize="7" 
+                       Margin="0,0,29,0"/>
+            <TextBlock Text="© Любое использование либо копирование материалов или подборки материалов приложения, элементов дизайна" FontSize="7" Margin="0,0,45,0"/>
+            <TextBlock Text="и оформления допускается лишь с разрешения правообладателя и только со ссылкой на источник." FontSize="7" Margin="0,0,98,0"/>
+            <TextBlock Text="© Выполнил работу: Гизетдинов Искандер Ленарович из группы 321П" FontSize="7" Margin="0,0,196,0"/>
+        </StackPanel>
+        <Rectangle HorizontalAlignment="Left" Height="36" Margin="648,414,0,0" VerticalAlignment="Top" Fill="#F2E9E9" Width="152"/>
+        <Button Style="{StaticResource MyButtonStyle}" Name="Vk" BorderBrush="Transparent"
+        Focusable="False" Width="38" Height="36" Click="Vk_Click"
+        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="719,414,43,0" RenderTransformOrigin="1.778,2.356" Cursor="Hand">
+            <Button.Background >
+                <ImageBrush ImageSource="Res/Subjects/vk.png"  />
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource MyButtonStyle}" Name="youtube" BorderBrush="Transparent"
+        Focusable="False" Width="38" Height="36" Click="YouTube_Click"
+        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="762,414,0,0" RenderTransformOrigin="1.778,2.356" Cursor="Hand">
+            <Button.Background >
+                <ImageBrush ImageSource="Res/Subjects/youtube.png"  />
+            </Button.Background>
+        </Button>
+        <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Margin="538,152,0,0" TextWrapping="Wrap" Foreground="White" Text="Ритуальные услуги в Казани
+Ритуальные услуги в Казани — востребованная сфера городского сервиса. Среди агентств, проводящих похороны, нас отличает высокое качество и умеренная стоимость работ. В течение четверти века ритуальные услуги — наша единственная деятельность." VerticalAlignment="Top" Width="262"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="607,52,0,0" VerticalAlignment="Top" Width="193" Source="Res/Subjects/years.png"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Foreground="#B53232" Margin="313,0,0,0" TextWrapping="Wrap" 
+                   Text="РИТУАЛЬНЫЕ УСЛУГИ В КАЗАНИ" VerticalAlignment="Top" Height="26" Width="225"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Foreground="#B53232" Margin="386,26,0,0" TextWrapping="Wrap"
+                   Text="КАЗАНИ" VerticalAlignment="Top" Height="26" Width="83"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Foreground="#B53232" Margin="365,68,0,0" TextWrapping="Wrap"
+                   Text="8-843-216-43" VerticalAlignment="Top" Height="26" Width="123"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Foreground="#B53232" Margin="343,87,0,0" TextWrapping="Wrap"
+                   Text="КРУГЛОСУТОЧНО" VerticalAlignment="Top" Height="26" Width="164"/>
+    </Grid>
+
+</Page>
