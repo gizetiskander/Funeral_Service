@@ -36,5 +36,10 @@ namespace Funeral_Service_1.Views
                 }
             }   
         }
+
+        private void btn_Pay_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PaymentPage());
+        }
     }
 }

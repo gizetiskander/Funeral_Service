@@ -1,14 +1,62 @@
-﻿<Page x:Class="Funeral_Service_1.Views.OrganizationPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Funeral_Service_1.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Funeral_Service_1.Views.OrganizationPage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OrganizationPage">
-
+    <Page.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="344,10,0,0" TextWrapping="Wrap" FontSize="36" Foreground="#B53232" VerticalAlignment="Top" Width="384" Height="67"><Run Text="Организация похорон"/><LineBreak/><Run/></TextBlock>
+        <Image HorizontalAlignment="Left" Height="224" Margin="352,82,0,0" VerticalAlignment="Top" Width="362" Source="Res/Background/organization.png" RenderTransformOrigin="0.537,0.478"/>
+        <TextBlock HorizontalAlignment="Left" Margin="286,311,0,0" TextWrapping="Wrap" FontSize="10" Text="Сотрудники нашей компании возьмут на себя все вопросы, связанные с организацией похорон в соответствии с принятыми традициями и вероисповеданием усопшего.
+Единственное, что в силах сделать близкие для человека, навсегда покинувшего этот мир – достойно проводить его, сохранив в памяти лишь лучшие моменты жизни усопшего. Однако горе от потери часто становится непосильной ношей, под грузом которой люди теряются и просто не знают, что делать и куда обращаться в этот скорбный момент.
+" VerticalAlignment="Top" Height="83"/>
+        <Button x:Name="btn_Create" Content="Оформить" FontSize="10" Click="btn_Create_Click" BorderBrush="Black" BorderThickness="3" Margin="494,404,191,22" RenderTransformOrigin="0.5,0.5" Height="Auto">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.584"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232"  Stroke="Black" StrokeThickness="3"/>
+                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontSize="10"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button Style="{StaticResource MyButtonStyle}" Name="Exit" BorderBrush="Transparent"
+        Focusable="False" Width="32" Height="31" Click="Exit_Click"
+        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="235,419,533,0" RenderTransformOrigin="1.778,2.356" Cursor="Hand">
+            <Button.Background >
+                <ImageBrush ImageSource="Res/Icons/close.png"  />
+            </Button.Background>
+        </Button>
+
+
+
     </Grid>
 </Page>

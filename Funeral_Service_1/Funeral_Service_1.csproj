@@ -189,9 +189,6 @@
     <Compile Include="Views\RegWindow.xaml.cs">
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReviewsPage.xaml.cs">
-      <DependentUpon>ReviewsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ServPage.xaml.cs">
       <DependentUpon>ServPage.xaml</DependentUpon>
     </Compile>
@@ -284,10 +281,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ReviewsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ServPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -316,6 +309,12 @@
       <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
       <LastGenOutput>FuneralServiceModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Views\Res\Subjects\coin.png" />
+    <Resource Include="Views\Res\Background\cremauiaBackground.png" />
+    <Resource Include="Views\Res\Background\embalmBackground.png" />
+    <Resource Include="Views\Res\Background\graveBackground.png" />
+    <Resource Include="Views\Res\Background\katafalBackground.png" />
+    <Resource Include="Views\Res\Background\organization.png" />
     <Resource Include="Views\Res\Subjects\grob1.png" />
     <Resource Include="Views\Res\Subjects\pamatnik.png" />
     <Resource Include="Views\Res\Subjects\venok.png" />

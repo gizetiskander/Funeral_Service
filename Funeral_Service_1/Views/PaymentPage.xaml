@@ -9,6 +9,31 @@
       Title="PaymentPage">
 
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Height="140" Margin="485,0,0,0" VerticalAlignment="Top" Width="125" Source="Res/Subjects/coin.png"/>
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="295,161,0,0" Background="White" TextWrapping="Wrap" Text="" 
+            VerticalAlignment="Top" Width="155" BorderBrush="#B53232" BorderThickness="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="295,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Text="ФИО" Height="17" Width="55" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
+        <TextBox x:Name="UserName_Copy" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="471,161,0,0" Background="White" TextWrapping="Wrap" Text="" 
+            VerticalAlignment="Top" Width="155" BorderBrush="#B53232" BorderThickness="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="471,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Text="Услуга" Height="17" Width="55" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="641,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Height="17" Width="74" RenderTransformOrigin="0.963,9.875" FontSize="14"><Run Text="Кладбищ"/><Run Text="е"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="295,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Text="Способы оплаты" Height="17" Width="113" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
+        <TextBox x:Name="UserName_Copy3" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="471,247,0,0" Background="White" TextWrapping="Wrap" Text="" 
+            VerticalAlignment="Top" Width="155" BorderBrush="#B53232" BorderThickness="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="471,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Text="Номер Карты" Height="17" Width="101" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
+        <TextBox x:Name="UserName_Copy4" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="641,247,0,0" Background="White" TextWrapping="Wrap" Text="" 
+            VerticalAlignment="Top" Width="155" BorderBrush="#B53232" BorderThickness="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="641,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
+            Foreground="Black" Height="17" Width="74" RenderTransformOrigin="0.963,9.875" FontSize="14" Text="Цена"/>
+        <ComboBox HorizontalAlignment="Left" Margin="641,161,0,0" VerticalAlignment="Top" Width="149" Height="28" Background="White" BorderBrush="#B53232" BorderThickness="3"/>
+        <ComboBox HorizontalAlignment="Left" Margin="295,247,0,0" VerticalAlignment="Top" Width="149" Height="28" Background="White" BorderBrush="#B53232" BorderThickness="3" >
+            <TextBlock />
+        </ComboBox>
+
     </Grid>
 </Page>

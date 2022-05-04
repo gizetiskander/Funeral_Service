@@ -24,5 +24,15 @@ namespace Funeral_Service_1.Views
         {
             InitializeComponent();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void btn_Create_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BucketPage());
+        }
     }
 }
