@@ -16,6 +16,7 @@ namespace Funeral_Service_1.ViewModel
         private Page ServPage = new ServPage();
         private Page InfoPage = new InfoPage();
         private Page ProductsPage = new ProductsPage();
+        private Page BucketPage = new BucketPage();
         private Page _CurPage = new MainPage();
 
         public Page CurPage
@@ -56,6 +57,12 @@ namespace Funeral_Service_1.ViewModel
             }
         }
 
-     
+        public ICommand OpenBPage
+        {
+            get
+            {
+                return new RelayCommand(() => CurPage = BucketPage);
+            }
+        }
     }
 }

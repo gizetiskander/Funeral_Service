@@ -95,43 +95,35 @@
             </Grid.RowDefinitions>
             <Frame Grid.ColumnSpan="10" Grid.RowSpan="10" NavigationUIVisibility="Hidden" Content="{Binding CurPage}"/>
             <Grid Name="SlideMenu" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Background="Transparent" Margin="0,29,0,0" Width="220">
-                <Grid.Style>
-                    <Style TargetType="Grid">
-                        <Setter Property="Width" Value="255"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Path=IsCheked, ElementName=CloseSlideMenu}" Value="True">
-                                <Setter Property="Width" Value="40"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Grid.Style>
                 <Border BorderThickness="1, 0, 0, 1" BorderBrush="Transparent" Margin="0,0,-15,0"/>
                 <Border BorderThickness="0" Background="#B53232" Opacity="0.6" Margin="0,-109,-15,0"/>
                 <StackPanel Orientation="Vertical" Margin="0,0,-15,0">
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenMPage }" Content="Главная"/>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenSPage}" Content="Услуги"/>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenIPage}" Content="Информация"/>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenPPage}" Content="Товары"/>
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenMPage }" Content="Главная">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/home.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenSPage}" Content="Услуги">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/serv.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenIPage}" Content="Информация">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/info.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenPPage}" Content="Товары">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/prod.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenBPage}" Content="Корзина">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/bask.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
                 </StackPanel>
-                <ToggleButton x:Name="CloseSlideMenu" Background="Transparent" Margin="0,306,190,0">
-                    <ToggleButton.Template>
-                        <ControlTemplate>
-                            <Image>
-                                <Image.Style>
-                                    <Style TargetType="Image">
-                                        <Setter Property="Source" Value="Res/Icons/close.png"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, 
-                                                AncestorType={x:Type ToggleButton}}, Path=IsChecked}" Value="True">
-                                                <Setter Property="Source" Value="Res/Icons/open.png"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Image.Style>
-                            </Image>
-                        </ControlTemplate>
-                    </ToggleButton.Template>
-                </ToggleButton>
             </Grid>
             <Button Style="{StaticResource MyButtonStyle}" Name="Exit" BorderBrush="Transparent"
         Focusable="False" Width="38" Height="36" Click="Exit_Click"

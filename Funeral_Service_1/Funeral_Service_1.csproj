@@ -142,6 +142,9 @@
     <Compile Include="Views\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BucketPage.xaml.cs">
+      <DependentUpon>BucketPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CremauiaPage.xaml.cs">
       <DependentUpon>CremauiaPage.xaml</DependentUpon>
     </Compile>
@@ -222,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\BucketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CremauiaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -298,6 +305,16 @@
       <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
       <LastGenOutput>FuneralServiceModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Views\Res\Icons\bask.png" />
+    <Resource Include="Views\Res\Icons\prod.png" />
+    <Resource Include="Views\Res\Icons\info.png" />
+    <Resource Include="Views\Res\Icons\serv.png" />
+    <Resource Include="Views\Res\Icons\home.png" />
+    <Resource Include="Views\Res\Subjects\banka.png" />
+    <Resource Include="Views\Res\Subjects\grave.png" />
+    <Resource Include="Views\Res\Subjects\grob.png" />
+    <Resource Include="Views\Res\Subjects\katafal.png" />
+    <Resource Include="Views\Res\Subjects\kolba.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

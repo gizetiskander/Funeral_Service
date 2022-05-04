@@ -9,6 +9,13 @@
       Title="InfoPage">
 
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="219,67,0,0" TextWrapping="Wrap" Text="РИТУАЛЬНОЕ АГЕНТСТВО В КАЗАНИ —" FontSize="20" Foreground="#B53232" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="305,10,0,0" TextWrapping="Wrap" Text="Полезная информация" FontSize="30" Foreground="#B53232" VerticalAlignment="Top" Height="52"/>
+        <TextBlock FontSize="10" HorizontalAlignment="Left" Margin="219,99,0,0" TextWrapping="Wrap" Text="Казанское похоронное бюро входит в состав одноимённой группы компаний, которые обеспечивают качественный похоронный сервис в Российской Федерации. Наша деятельность соответствует высоким корпоративным стандартам, строгим морально-этическим нормам и заявленным интересам заказчиков. Наше ритуальное агентство выгодно отличает:" VerticalAlignment="Top" Width="405"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,170,0,0" TextWrapping="Wrap" Text="Опыт. Стаж работы сотрудников в среднем составляет 10 лет." FontSize="10" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,188,0,0" TextWrapping="Wrap" FontSize="10" Text="Комплексный сервис от сбора документов до проведения поминок и установки мемориальных сооружений." VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,213,0,0" TextWrapping="Wrap" FontSize="10" Text="Прозрачное ценообразование. Итоговую стоимость заказчик видит уже при заключении договора. Тарифы размещены на сайте агентства." VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,258,0,0" TextWrapping="Wrap" FontSize="10" Text="Собственное производство ритуальных товаров. Наша продукция поставляется без посреднических наценок и торговых надбавок." VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

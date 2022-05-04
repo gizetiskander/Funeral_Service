@@ -24,5 +24,30 @@ namespace Funeral_Service_1.Views
         {
             InitializeComponent();
         }
+
+        private void btn_Grob_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Katafal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Kolba_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Banka_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Grave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
