@@ -98,27 +98,27 @@
                 <Border BorderThickness="1, 0, 0, 1" BorderBrush="Transparent" Margin="0,0,-15,0"/>
                 <Border BorderThickness="0" Background="#B53232" Opacity="0.6" Margin="0,-109,-15,0"/>
                 <StackPanel Orientation="Vertical" Margin="0,0,-15,0">
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenMPage }" Content="Главная">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenMPage }" Content="Главная" Height="44">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/home.png</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenSPage}" Content="Услуги">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenSPage}" Content="Услуги" Height="42">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/serv.png</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenIPage}" Content="Информация">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenIPage}" Content="Информация" Height="44">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/info.png</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenPPage}" Content="Товары">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenPPage}" Content="Товары" Height="43">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/prod.png</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenBPage}" Content="Корзина">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenBPage}" Content="Корзина" Height="42">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/bask.png</ImageSource>
                         </Button.Resources>

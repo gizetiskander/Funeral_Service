@@ -34,7 +34,7 @@ namespace Funeral_Service_1.Views
             {
                 if (user.Email == Email.Text.Trim())
                 {
-                    if(user.Password == Password.Text.Trim() && user.ID_Role == 2)
+                    if (user.Password == Password.Text.Trim() && user.ID_Role == 2)
                     {
                         MessageBox.Show($"Привет, админ: {user.User_Name}");
                         AuthWindow.authUser = user;
@@ -47,6 +47,10 @@ namespace Funeral_Service_1.Views
                         this.Close();
                         main.Show();
                     }
+                }
+                if (user.Password != null)
+                {
+                    MessageBox.Show("Некорректные данные!");
                 }
             }
         }

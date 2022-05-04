@@ -24,5 +24,20 @@ namespace Funeral_Service_1.Views
         {
             InitializeComponent();
         }
+
+        private void btn_Pamatnik_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Grob1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Venok_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

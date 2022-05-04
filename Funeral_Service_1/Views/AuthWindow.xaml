@@ -10,15 +10,15 @@
     <Grid>
         <Image HorizontalAlignment="Left" Height="459" Margin="70,93,0,0" VerticalAlignment="Top" Width="268" 
                Source="Res/Icons/PersonalIcon.png"/>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="46" FontSize="22" Margin="84,418,0,0" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="46" FontSize="22" Margin="84,418,0,0" Background="White"  TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="240" BorderBrush="#B53232" BorderThickness="5"/>
         <TextBlock HorizontalAlignment="Left" Margin="84,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular"
                    Foreground="Black" Text="Email" Height="29" Width="60" FontSize="24"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="46" FontSize="22" BorderBrush="#B53232" BorderThickness="5" Margin="84,506,0,0" 
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="46" FontSize="22" BorderBrush="#B53232" Background="White"  BorderThickness="5" Margin="84,506,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
         <TextBlock HorizontalAlignment="Left" Margin="84,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  FontFamily="Regular"
                    Foreground="Black" Text="Пароль " Height="26" Width="92" FontSize="24"/>
-        <Button x:Name="Sign_Up" Content="Авторизация" Margin="71,584,70,229" Click="Sign_Up_Click" BorderBrush="Black" BorderThickness="5">
+        <Button x:Name="Sign_Up" Content="Авторизация" Margin="71,598,60,208" Height="50" Width="250" Click="Sign_Up_Click" BorderBrush="Black" BorderThickness="5" >
             <Button.Template>
                 <ControlTemplate  TargetType="Button">
                     <Grid>

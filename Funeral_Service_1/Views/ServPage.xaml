@@ -16,7 +16,7 @@
         <TextBlock FontSize="10" HorizontalAlignment="Left" Margin="258,174,0,0" TextWrapping="Wrap" Text="Наша служба работает на основе утверждённых городской администрацией тарифов. Наши цены на ритуальные услуги в Казани фиксированы и минимальны. Обратившись к нам, вы можете рассчитывать на всестороннюю поддержку наших специалистов в столь нелёгкий час. При этом стоимость ритуальных услуг и товаров, необходимых для организации достойной церемонии прощания, всегда оговаривается заранее. Мы строго соблюдаем договорные отношения и не выходим за рамки указанного бюджета." VerticalAlignment="Top" Width="446"/>
         <TextBlock HorizontalAlignment="Left" Margin="278,259,0,0" TextWrapping="Wrap" Text="Организация похорон" Foreground="White" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="313,280,0,0" VerticalAlignment="Top" Width="53" Source="Res/Subjects/grob.png"/>
-        <Button x:Name="btn_Grob" Content="Перейти" FontSize="10" Click="btn_Grob_Click" BorderBrush="Black" BorderThickness="3" Margin="304,338,426,88" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="btn_Grob" Content="Перейти" FontSize="10" Click="btn_Grob_Click" BorderBrush="Black" BorderThickness="3" Margin="304,338,426,88" RenderTransformOrigin="0.5,0.5" Height="Auto">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -37,7 +37,7 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="476,259,0,0" TextWrapping="Wrap" Text="Катафалк" Foreground="White" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="474,280,0,0" VerticalAlignment="Top" Width="53" Source="Res/Subjects/katafal.png" RenderTransformOrigin="1.547,0.491"/>
-        <Button x:Name="btn_Katafal" Content="Перейти" FontSize="10" Click="btn_Katafal_Click" BorderBrush="Black" BorderThickness="3" Margin="469,338,261,88" RenderTransformOrigin="0.53,0.001">
+        <Button x:Name="btn_Katafal" Content="Перейти" FontSize="10" Click="btn_Katafal_Click" BorderBrush="Black" BorderThickness="3" Margin="469,338,261,88" RenderTransformOrigin="0.53,0.001" Height="Auto">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -58,7 +58,7 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="605,259,0,0" TextWrapping="Wrap" Text="Бальзамирование" Foreground="White" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="626,280,0,0" VerticalAlignment="Top" Width="53" Source="Res/Subjects/kolba.png" RenderTransformOrigin="1.547,0.491"/>
-        <Button x:Name="btn_Kolba" Content="Перейти" FontSize="10" Click="btn_Kolba_Click" BorderBrush="Black" BorderThickness="3" Margin="618,337,112,89" RenderTransformOrigin="0.53,0.001">
+        <Button x:Name="btn_Kolba" Content="Перейти" FontSize="10" Click="btn_Kolba_Click" BorderBrush="Black" BorderThickness="3" Margin="618,337,112,89" RenderTransformOrigin="0.53,0.001" Height="Auto">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -79,7 +79,7 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="396,364,0,0" TextWrapping="Wrap" Text="Кремация" Foreground="White" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="41" Margin="406,385,0,0" VerticalAlignment="Top" Width="37" Source="Res/Subjects/banka.png" RenderTransformOrigin="0.381,0.511"/>
-        <Button x:Name="btn_Banka" Content="Перейти" FontSize="10" Click="btn_Banka_Click" BorderBrush="Black" BorderThickness="3" Margin="391,423,339,3" RenderTransformOrigin="0.53,0.001">
+        <Button x:Name="btn_Banka" Content="Перейти" FontSize="10" Click="btn_Banka_Click" BorderBrush="Black" BorderThickness="3" Margin="391,423,339,2" RenderTransformOrigin="0.53,0.001" Height="Auto">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -100,7 +100,7 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="532,364,0,0" TextWrapping="Wrap" Text="Место на кладбище" Foreground="White" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="46" Margin="564,380,0,0" VerticalAlignment="Top" Width="48" Source="Res/Subjects/grave.png" RenderTransformOrigin="0.381,0.511"/>
-        <Button x:Name="btn_Grave" Content="Перейти" FontSize="10" Click="btn_Grave_Click" BorderBrush="Black" BorderThickness="3" Margin="554,423,176,3" RenderTransformOrigin="0.53,0.001">
+        <Button x:Name="btn_Grave" Content="Перейти" FontSize="10" Click="btn_Grave_Click" BorderBrush="Black" BorderThickness="3" Margin="554,423,176,3" RenderTransformOrigin="0.53,0.001" Height="Auto">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

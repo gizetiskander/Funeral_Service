@@ -1,14 +1,89 @@
-﻿<Page x:Class="Funeral_Service_1.Views.ProductsPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Funeral_Service_1.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Funeral_Service_1.Views.ProductsPage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductsPage">
 
     <Grid>
-        
+        <Rectangle Fill="White" Stroke="#B53232" RadiusX="10" RadiusY="10" HorizontalAlignment="Left" Height="279" Margin="284,110,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="134"/>
+        <TextBlock HorizontalAlignment="Left" Margin="454,10,0,0" TextWrapping="Wrap" Text="Товары" FontSize="36" Foreground="#B53232" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="86" VerticalAlignment="Top" Width="46" Margin="330,116,0,0" Source="Res/Subjects/pamatnik.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="296,207,0,0" TextWrapping="Wrap" FontSize="8" VerticalAlignment="Top" Width="114" Height="152"><Run Text="У нас Вы можете купить или заказать по индивидуальным требованиям памятник по выгодной цене. Мы даем гарантию на памятники и установочные работы. Работаем с лучшими поставщиками мрамора и гранита в России!"/><LineBreak/><Run/><LineBreak/><Run Text="Цена: от 7 000 руб. (мрамор), от 11 500 руб. (гранит). При оплате памятника хранение бесплатно!"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="318,192,0,0" TextWrapping="Wrap" Text="Памятники" FontWeight="Bold" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Pamatnik" Content="Купить" FontSize="10" Click="btn_Pamatnik_Click" BorderBrush="Black" BorderThickness="3" Margin="317,360,413,66" RenderTransformOrigin="0.5,0.5" Height="Auto">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.584"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232"  Stroke="Black" StrokeThickness="3"/>
+                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontSize="10"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Rectangle Fill="White" Stroke="#B53232" RadiusX="10" RadiusY="10" HorizontalAlignment="Left" Height="279" Margin="454,110,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="134"/>
+        <Image HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="83" Margin="481,127,0,0" Source="Res/Subjects/grob1.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="467,208,0,0" TextWrapping="Wrap" FontSize="8" VerticalAlignment="Top" Width="114" Height="152" >
+            <Run FontSize="10" Text="В МУП «‎Ритуал» г. Казани вы можете купить гроб, изготовленный в собственном цеху по требованиям заказчика из разных материалов и любого размера."/>
+            <LineBreak/><Run/><LineBreak/><Run FontSize="10" Text="Цена от 1530 руб."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="504,192,0,0" TextWrapping="Wrap" Text="Гробы" FontWeight="Bold" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Grob1" Content="Купить" FontSize="10" Click="btn_Grob1_Click" BorderBrush="Black" BorderThickness="3" Margin="488,361,242,65" RenderTransformOrigin="0.5,0.5" Height="Auto">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.584"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232"  Stroke="Black" StrokeThickness="3"/>
+                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontSize="10"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Rectangle Fill="White" Stroke="#B53232" RadiusX="10" RadiusY="10" HorizontalAlignment="Left" Height="279" Margin="618,110,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="134"/>
+        <Image HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="50" Margin="660,120,0,0" Source="Res/Subjects/venok.png" RenderTransformOrigin="1.014,0.498"/>
+        <TextBlock HorizontalAlignment="Left" Margin="632,206,0,0" TextWrapping="Wrap" FontSize="8" VerticalAlignment="Top" Width="114" Height="152">
+            <Run FontSize="12" Text="У нас вы можете купить венок с искусственными цветами, а также заказать венок из живых цветов."/>
+            <LineBreak/><Run/><LineBreak/><Run FontSize="10" Text="Цена: от 990 руб."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="652,195,0,0" TextWrapping="Wrap" Text="Памятники" FontWeight="Bold" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Venok" Content="Купить" FontSize="10" Click="btn_Venok_Click" BorderBrush="Black" BorderThickness="3" Margin="650,360,80,66" RenderTransformOrigin="0.5,0.5" Height="Auto">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.584"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232"  Stroke="Black" StrokeThickness="3"/>
+                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontSize="10"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Page>

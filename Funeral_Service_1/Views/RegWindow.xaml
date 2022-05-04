@@ -21,11 +21,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="209" Margin="140,51,0,0" VerticalAlignment="Top" Width="168" Grid.Column="1" Source="Res/Icons/FuneralIcon.png"/>
-        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="40" FontSize="20" Margin="93,302,0,0" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="40" FontSize="20" Margin="93,302,0,0" Background="White" TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="246" BorderBrush="#B53232" BorderThickness="5" Grid.Column="1"/>
-        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="40" FontSize="20" Margin="93,366,0,0" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="40" Background="White"  FontSize="20" Margin="93,366,0,0" TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="246" Grid.Column="1" BorderBrush="#B53232" BorderThickness="5"/>
-        <Button x:Name="Sign_In" Content="Регистрация" Margin="140,707,114,114" Click="Sign_In_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5">
+        <Button x:Name="Sign_In" Content="Регистрация" Margin="101,702,81,114" Click="Sign_In_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5"  Height="Auto">
             <Button.Template>
                 <ControlTemplate  TargetType="Button">
                     <Grid>
@@ -36,7 +36,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="40" FontSize="20" Margin="93,433,0,0" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="40" FontSize="20" Background="White"  Margin="93,433,0,0" TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="246" Grid.Column="1" BorderBrush="#B53232" BorderThickness="5"/>
         <TextBlock HorizontalAlignment="Left" Margin="95,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
                    Foreground="Black" Text="ФИО" Height="23" Width="86" RenderTransformOrigin="0.963,9.875" Grid.Column="1" FontSize="24"/>
@@ -44,11 +44,11 @@
                    Foreground="Black" Text="Телефон" Height="24" Width="96" RenderTransformOrigin="0.618,0.875" Grid.Column="1" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="95,411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular"
                    Foreground="Black" Text="Email" Height="26" Width="62" Grid.Column="1" FontSize="24"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="40" FontSize="20" BorderBrush="#B53232" BorderThickness="5" Margin="95,506,0,0" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="40" Background="White"  FontSize="20" BorderBrush="#B53232" BorderThickness="5" Margin="95,506,0,0" TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="246" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="95,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  FontFamily="Regular"
                    Foreground="Black" Text="Пароль " Height="22" Width="94" Grid.Column="1" FontSize="24"/>
-        <Button x:Name="btn_Image" Content="Добавить фото" Click="btn_Image_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5" Margin="84,565,169,258">
+        <Button x:Name="btn_Image" Content="Добавить фото" Click="btn_Image_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5" Margin="64,565,178,258" Height="Auto">
             <Button.Template>
                 <ControlTemplate  TargetType="Button">
                     <Grid>
@@ -63,8 +63,8 @@
                RenderTransformOrigin="0.84,0.515" />
         <Rectangle Fill="#B53232" HorizontalAlignment="Left" Height="46"  VerticalAlignment="Top" Width="2079" Grid.ColumnSpan="2"/>
         <Rectangle Fill="#B53232" HorizontalAlignment="Left" Height="56"  VerticalAlignment="Top" Width="422" Margin="0,816,0,0" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn_ImageDel" Content="Удалить фото" Margin="84,632,169,188" Click="btn_ImageDel_Click" Grid.ColumnSpan="2" 
-                BorderBrush="Black" BorderThickness="5">
+        <Button x:Name="btn_ImageDel" Content="Удалить фото" Margin="64,633,178,188" Click="btn_ImageDel_Click" Grid.ColumnSpan="2" 
+                BorderBrush="Black" BorderThickness="5"  Height="Auto">
             <Button.Template>
                 <ControlTemplate  TargetType="Button">
                     <Grid>
@@ -75,7 +75,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="Sign_Up" Content="Авторизация" Margin="140,763,114,58" Click="Sign_Up_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5">
+        <Button x:Name="Sign_Up" Content="Авторизация" Margin="101,763,81,47" Click="Sign_Up_Click" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="5"  Height="Auto">
             <Button.Template>
                 <ControlTemplate  TargetType="{x:Type Button}">
                     <Grid>
