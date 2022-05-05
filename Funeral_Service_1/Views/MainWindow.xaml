@@ -118,7 +118,7 @@
                             <ImageSource x:Key="Img">Res/Icons/prod.png</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenBPage}" Content="Корзина" Height="42">
+                    <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenBPage}" Content="История" Height="42">
                         <Button.Resources>
                             <ImageSource x:Key="Img">Res/Icons/bask.png</ImageSource>
                         </Button.Resources>

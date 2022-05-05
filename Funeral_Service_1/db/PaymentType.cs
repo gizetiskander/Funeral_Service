@@ -12,24 +12,20 @@ namespace Funeral_Service_1.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class PaymentType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
+        public PaymentType()
         {
-            this.Basket = new HashSet<Basket>();
-            this.Graveyard = new HashSet<Graveyard>();
+            this.Payment = new HashSet<Payment>();
         }
     
-        public int ID_Service { get; set; }
-        public string Service_Name { get; set; }
-        public Nullable<decimal> Service_Price { get; set; }
+        public int ID_PaymentType { get; set; }
+        public string Name_PaymentType { get; set; }
         public Nullable<int> ID_Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Basket> Basket { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Graveyard> Graveyard { get; set; }
+        public virtual ICollection<Payment> Payment { get; set; }
         public virtual Role Role { get; set; }
     }
 }

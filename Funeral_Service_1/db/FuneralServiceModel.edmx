@@ -37,17 +37,27 @@
           <Property Name="Graveyard_Name" Type="varchar" MaxLength="50" />
           <Property Name="Graveyard_Location" Type="varchar" MaxLength="50" />
           <Property Name="ID_Service" Type="int" />
+          <Property Name="ID_Role" Type="int" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="ID_Payment" />
           </Key>
           <Property Name="ID_Payment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date_Payment" Type="date" />
-          <Property Name="Method_Payment" Type="varchar" MaxLength="50" />
-          <Property Name="Card" Type="int" />
+          <Property Name="Date_Payment" Type="datetime" />
+          <Property Name="Card" Type="varchar" MaxLength="50" />
+          <Property Name="Name_Payment" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentType_Name" Type="varchar" MaxLength="50" />
           <Property Name="ID_User" Type="int" />
-          <Property Name="ID_PaymentType" Type="int" />
+          <Property Name="Paid" Type="bit" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="ID_PaymentType" />
+          </Key>
+          <Property Name="ID_PaymentType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_PaymentType" Type="varchar" MaxLength="50" />
+          <Property Name="ID_Role" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -56,6 +66,7 @@
           <Property Name="ID_Product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Product_Name" Type="varchar" MaxLength="50" />
           <Property Name="Product_Price" Type="nchar" MaxLength="10" />
+          <Property Name="ID_Role" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -71,6 +82,7 @@
           <Property Name="ID_Service" Type="int" Nullable="false" />
           <Property Name="Service_Name" Type="varchar" MaxLength="50" />
           <Property Name="Service_Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ID_Role" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -142,6 +154,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Graveyard_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Graveyard" Type="Self.Graveyard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Graveyard">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Graveyard_Service">
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
           <End Role="Graveyard" Type="Self.Graveyard" Multiplicity="*" />
@@ -166,11 +190,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PaymentType_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="PaymentType">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище Funeral_Service_dbModelContainer">
           <EntitySet Name="_User" EntityType="Self._User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Graveyard" EntityType="Self.Graveyard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentType" EntityType="Self.PaymentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -195,6 +256,10 @@
             <End Role="Service" EntitySet="Service" />
             <End Role="Basket" EntitySet="Basket" />
           </AssociationSet>
+          <AssociationSet Name="FK_Graveyard_Role" Association="Self.FK_Graveyard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Graveyard" EntitySet="Graveyard" />
+          </AssociationSet>
           <AssociationSet Name="FK_Graveyard_Service" Association="Self.FK_Graveyard_Service">
             <End Role="Service" EntitySet="Service" />
             <End Role="Graveyard" EntitySet="Graveyard" />
@@ -202,6 +267,18 @@
           <AssociationSet Name="FK_Payment__User" Association="Self.FK_Payment__User">
             <End Role="_User" EntitySet="_User" />
             <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentType_Role" Association="Self.FK_PaymentType_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="PaymentType" EntitySet="PaymentType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Role" Association="Self.FK_Product_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_Role" Association="Self.FK_Service_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Service" EntitySet="Service" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -249,18 +326,24 @@
           <Property Name="ID_Service" Type="Int32" />
           <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_Graveyard" FromRole="Graveyard" ToRole="Basket" />
           <NavigationProperty Name="Service" Relationship="Self.FK_Graveyard_Service" FromRole="Graveyard" ToRole="Service" />
+          <Property Name="ID_Role" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Funeral_Service_dbModel.FK_Graveyard_Role" FromRole="Graveyard" ToRole="Role" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="ID_Payment" />
           </Key>
           <Property Name="ID_Payment" Type="Int32" Nullable="false" />
-          <Property Name="Date_Payment" Type="DateTime" Precision="0" />
-          <Property Name="Method_Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Payment" Type="DateTime" Precision="3" />
+          <Property Name="Method_Payment" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="Card" Type="Int32" />
           <Property Name="ID_User" Type="Int32" />
           <NavigationProperty Name="C_User" Relationship="Self.FK_Payment__User" FromRole="Payment" ToRole="C_User" />
           <Property Name="ID_PaymentType" Type="Int32" />
+          <NavigationProperty Name="PaymentType" Relationship="Funeral_Service_dbModel.FK_Payment_PaymentType" FromRole="Payment" ToRole="PaymentType" />
+          <Property Name="Name_Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Paid" Type="Boolean" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -270,6 +353,8 @@
           <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Product_Price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_Product" FromRole="Product" ToRole="Basket" />
+          <Property Name="ID_Role" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Funeral_Service_dbModel.FK_Product_Role" FromRole="Product" ToRole="Role" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -278,6 +363,10 @@
           <Property Name="ID_Role" Type="Int32" Nullable="false" />
           <Property Name="Role_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="C_User" Relationship="Self.FK__User_Role" FromRole="Role" ToRole="C_User" />
+          <NavigationProperty Name="Graveyard" Relationship="Funeral_Service_dbModel.FK_Graveyard_Role" FromRole="Role" ToRole="Graveyard" />
+          <NavigationProperty Name="PaymentType" Relationship="Funeral_Service_dbModel.FK_PaymentType_Role" FromRole="Role" ToRole="PaymentType" />
+          <NavigationProperty Name="Product" Relationship="Funeral_Service_dbModel.FK_Product_Role" FromRole="Role" ToRole="Product" />
+          <NavigationProperty Name="Service" Relationship="Funeral_Service_dbModel.FK_Service_Role" FromRole="Role" ToRole="Service" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -288,6 +377,8 @@
           <Property Name="Service_Price" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_Service" FromRole="Service" ToRole="Basket" />
           <NavigationProperty Name="Graveyard" Relationship="Self.FK_Graveyard_Service" FromRole="Service" ToRole="Graveyard" />
+          <Property Name="ID_Role" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Funeral_Service_dbModel.FK_Service_Role" FromRole="Service" ToRole="Role" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -408,6 +499,27 @@
             <End Role="C_User" EntitySet="C_User" />
             <End Role="Basket" EntitySet="Basket" />
           </AssociationSet>
+          <EntitySet Name="PaymentType" EntityType="Funeral_Service_dbModel.PaymentType" />
+          <AssociationSet Name="FK_Payment_PaymentType" Association="Funeral_Service_dbModel.FK_Payment_PaymentType">
+            <End EntitySet="PaymentType" Role="PaymentType" />
+            <End EntitySet="Payment" Role="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Graveyard_Role" Association="Funeral_Service_dbModel.FK_Graveyard_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Graveyard" EntitySet="Graveyard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentType_Role" Association="Funeral_Service_dbModel.FK_PaymentType_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="PaymentType" EntitySet="PaymentType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Role" Association="Funeral_Service_dbModel.FK_Product_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_Role" Association="Funeral_Service_dbModel.FK_Service_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Basket__User">
           <End Type="Funeral_Service_dbModel.C_User" Role="C_User" Multiplicity="0..1" />
@@ -418,6 +530,76 @@
             </Principal>
             <Dependent Role="Basket">
               <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="ID_PaymentType" />
+          </Key>
+          <Property Name="ID_PaymentType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Payment" Relationship="Funeral_Service_dbModel.FK_Payment_PaymentType" FromRole="PaymentType" ToRole="Payment" />
+          <Property Name="ID_Role" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Funeral_Service_dbModel.FK_PaymentType_Role" FromRole="PaymentType" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Payment_PaymentType">
+          <End Type="Funeral_Service_dbModel.PaymentType" Multiplicity="0..1" Role="PaymentType" />
+          <End Type="Funeral_Service_dbModel.Payment" Multiplicity="*" Role="Payment" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentType">
+              <PropertyRef Name="ID_PaymentType" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="ID_PaymentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Graveyard_Role">
+          <End Type="Funeral_Service_dbModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="Funeral_Service_dbModel.Graveyard" Role="Graveyard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Graveyard">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentType_Role">
+          <End Type="Funeral_Service_dbModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="Funeral_Service_dbModel.PaymentType" Role="PaymentType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="PaymentType">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Role">
+          <End Type="Funeral_Service_dbModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="Funeral_Service_dbModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_Role">
+          <End Type="Funeral_Service_dbModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="Funeral_Service_dbModel.Service" Role="Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ID_Role" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -456,6 +638,7 @@
           <EntitySetMapping Name="Graveyard">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Graveyard">
               <MappingFragment StoreEntitySet="Graveyard">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
                 <ScalarProperty Name="ID_Graveyard" ColumnName="ID_Graveyard" />
                 <ScalarProperty Name="Graveyard_Name" ColumnName="Graveyard_Name" />
                 <ScalarProperty Name="Graveyard_Location" ColumnName="Graveyard_Location" />
@@ -466,10 +649,11 @@
           <EntitySetMapping Name="Payment">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Payment">
               <MappingFragment StoreEntitySet="Payment">
-                <ScalarProperty Name="ID_PaymentType" ColumnName="ID_PaymentType" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
+                <ScalarProperty Name="Name_Payment" ColumnName="Name_Payment" />
                 <ScalarProperty Name="ID_Payment" ColumnName="ID_Payment" />
                 <ScalarProperty Name="Date_Payment" ColumnName="Date_Payment" />
-                <ScalarProperty Name="Method_Payment" ColumnName="Method_Payment" />
                 <ScalarProperty Name="Card" ColumnName="Card" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
               </MappingFragment>
@@ -478,6 +662,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
                 <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
                 <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
                 <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
@@ -495,6 +680,7 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
                 <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />
                 <ScalarProperty Name="Service_Name" ColumnName="Service_Name" />
                 <ScalarProperty Name="Service_Price" ColumnName="Service_Price" />
@@ -509,6 +695,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentType">
+            <EntityTypeMapping TypeName="Funeral_Service_dbModel.PaymentType">
+              <MappingFragment StoreEntitySet="PaymentType">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="Name_PaymentType" ColumnName="Name_PaymentType" />
+                <ScalarProperty Name="ID_PaymentType" ColumnName="ID_PaymentType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

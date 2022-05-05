@@ -27,17 +27,17 @@ namespace Funeral_Service_1.Views
 
         private void btn_Pamatnik_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PayProductPage());
         }
 
         private void btn_Grob1_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PayProductPage());
         }
 
         private void btn_Venok_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PayProductPage());
         }
     }
 }

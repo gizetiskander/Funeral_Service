@@ -23,25 +23,5 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="265,159,0,0" TextWrapping="Wrap" Text="Номер заказа         Кол-во              Номер услуги      Дата " Background="White" VerticalAlignment="Top" Width="496"/>
-        <Button x:Name="btn_Pay" Content="Купить" FontSize="10" Click="btn_Pay_Click" BorderBrush="Black" BorderThickness="3" Margin="469,421,216,5" RenderTransformOrigin="0.5,0.5" Height="Auto">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.584"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-            <Button.Template>
-                <ControlTemplate  TargetType="{x:Type Button}">
-                    <Grid>
-                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232"  Stroke="Black" StrokeThickness="3"/>
-                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
-                            VerticalAlignment="Center" FontSize="10"/>
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-
-        </Button>
     </Grid>
 </Page>

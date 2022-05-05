@@ -27,19 +27,7 @@ namespace Funeral_Service_1.Views
         {
             dbEntities = new Funeral_Service_dbEntities();
             InitializeComponent();
-            foreach(var basket in BucketPage.dbEntities.Basket)
-            {
-                if (AuthWindow.authUser.ID_User == 4)
-                {
-                    Basket.ItemsSource = dbEntities.Basket.Where(x => x.ID_User == 4).ToList();
 
-                }
-            }   
-        }
-
-        private void btn_Pay_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PaymentPage());
         }
     }
 }

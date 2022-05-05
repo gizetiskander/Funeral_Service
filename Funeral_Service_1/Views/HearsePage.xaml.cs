@@ -32,7 +32,7 @@ namespace Funeral_Service_1.Views
 
         private void btn_Create_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BucketPage());
+            NavigationService.Navigate(new PaymentPage());
         }
     }
 }

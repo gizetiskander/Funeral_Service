@@ -136,6 +136,9 @@
     <Compile Include="db\Payment.cs">
       <DependentUpon>FuneralServiceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="db\PaymentType.cs">
+      <DependentUpon>FuneralServiceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="db\Product.cs">
       <DependentUpon>FuneralServiceModel.tt</DependentUpon>
     </Compile>
@@ -182,6 +185,9 @@
     </Compile>
     <Compile Include="Views\PaymentPage.xaml.cs">
       <DependentUpon>PaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayProductPage.xaml.cs">
+      <DependentUpon>PayProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductsPage.xaml.cs">
       <DependentUpon>ProductsPage.xaml</DependentUpon>
@@ -272,6 +278,10 @@
     <Page Include="Views\PaymentPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PayProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProductsPage.xaml">
       <Generator>MSBuild:Compile</Generator>

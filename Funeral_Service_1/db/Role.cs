@@ -18,6 +18,10 @@ namespace Funeral_Service_1.db
         public Role()
         {
             this.C_User = new HashSet<C_User>();
+            this.Graveyard = new HashSet<Graveyard>();
+            this.PaymentType = new HashSet<PaymentType>();
+            this.Product = new HashSet<Product>();
+            this.Service = new HashSet<Service>();
         }
     
         public int ID_Role { get; set; }
@@ -25,5 +29,13 @@ namespace Funeral_Service_1.db
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C_User> C_User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Graveyard> Graveyard { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaymentType> PaymentType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Service> Service { get; set; }
     }
 }

@@ -33,5 +33,6 @@ namespace Funeral_Service_1.db
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<PaymentType> PaymentType { get; set; }
     }
 }
