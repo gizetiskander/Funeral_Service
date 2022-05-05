@@ -23,11 +23,9 @@
           </Key>
           <Property Name="ID_Basket" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Count" Type="int" />
-          <Property Name="ID_Service" Type="int" />
-          <Property Name="ID_Graveyard" Type="int" />
-          <Property Name="ID_Product" Type="int" />
           <Property Name="Date" Type="datetime" />
           <Property Name="ID_User" Type="int" />
+          <Property Name="Done" Type="bit" />
         </EntityType>
         <EntityType Name="Graveyard">
           <Key>
@@ -55,7 +53,7 @@
           <Key>
             <PropertyRef Name="ID_PaymentProduct" />
           </Key>
-          <Property Name="ID_PaymentProduct" Type="int" Nullable="false" />
+          <Property Name="ID_PaymentProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date_PaymentProduct" Type="datetime" />
           <Property Name="Card" Type="varchar" MaxLength="50" />
           <Property Name="Name_PaymentProduct" Type="varchar" MaxLength="50" />
@@ -127,42 +125,6 @@
             </Principal>
             <Dependent Role="Basket">
               <PropertyRef Name="ID_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Basket_Graveyard">
-          <End Role="Graveyard" Type="Self.Graveyard" Multiplicity="0..1" />
-          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Graveyard">
-              <PropertyRef Name="ID_Graveyard" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="ID_Graveyard" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Basket_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ID_Product" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="ID_Product" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Basket_Service">
-          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
-          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Service">
-              <PropertyRef Name="ID_Service" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="ID_Service" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -269,18 +231,6 @@
             <End Role="_User" EntitySet="_User" />
             <End Role="Basket" EntitySet="Basket" />
           </AssociationSet>
-          <AssociationSet Name="FK_Basket_Graveyard" Association="Self.FK_Basket_Graveyard">
-            <End Role="Graveyard" EntitySet="Graveyard" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Basket_Product" Association="Self.FK_Basket_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Basket_Service" Association="Self.FK_Basket_Service">
-            <End Role="Service" EntitySet="Service" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
           <AssociationSet Name="FK_Graveyard_Role" Association="Self.FK_Graveyard_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="Graveyard" EntitySet="Graveyard" />
@@ -345,6 +295,7 @@
           <NavigationProperty Name="Graveyard" Relationship="Self.FK_Basket_Graveyard" FromRole="Basket" ToRole="Graveyard" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Basket_Product" FromRole="Basket" ToRole="Product" />
           <NavigationProperty Name="Service" Relationship="Self.FK_Basket_Service" FromRole="Basket" ToRole="Service" />
+          <Property Name="Done" Type="Boolean" />
         </EntityType>
         <EntityType Name="Graveyard">
           <Key>
@@ -665,11 +616,9 @@
           <EntitySetMapping Name="Basket">
             <EntityTypeMapping TypeName="Funeral_Service_dbModel.Basket">
               <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="Done" ColumnName="Done" />
                 <ScalarProperty Name="ID_Basket" ColumnName="ID_Basket" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />
-                <ScalarProperty Name="ID_Graveyard" ColumnName="ID_Graveyard" />
-                <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
               </MappingFragment>

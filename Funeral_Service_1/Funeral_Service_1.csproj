@@ -156,6 +156,9 @@
     </Compile>
     <Compile Include="ViewModel\MainViewFoundation.cs" />
     <Compile Include="ViewModel\ModelFoundation.cs" />
+    <Compile Include="Views\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
@@ -249,6 +252,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AuthWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Funeral_Service_1.Views"
         xmlns:vm="clr-namespace:Funeral_Service_1.ViewModel"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#E0CECE">
     <Window.DataContext>
@@ -123,6 +124,11 @@
                             <ImageSource x:Key="Img">Res/Icons/bask.png</ImageSource>
                         </Button.Resources>
                     </Button>
+                    <Button x:Name="btn_Admin" Template="{StaticResource ResourceKey=SLideMenuBtn}"  Command="{Binding OpenAPage}" Content="Админ" Height="42" Initialized="btn_Admin_Initialized">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/PersonalIcon.png</ImageSource>
+                        </Button.Resources>
+                    </Button>
                 </StackPanel>
             </Grid>
             <Button Style="{StaticResource MyButtonStyle}" Name="Exit" BorderBrush="Transparent"
@@ -132,7 +138,6 @@
                     <ImageBrush ImageSource="Res/Subjects/jesus.png"  />
                 </Button.Background>
             </Button>
-
 
         </Grid>
         <Image HorizontalAlignment="Left" Height="109" Margin="55,0,0,0" VerticalAlignment="Top" Width="94" Source="Res/Icons/LogoFuneral.png"/>

@@ -10,7 +10,7 @@
 
     <Grid>
         <Image HorizontalAlignment="Left" Height="144" Margin="458,10,0,0" VerticalAlignment="Top" Width="136" Source="Res/Icons/bask.png"/>
-        <ListBox x:Name="Basket" HorizontalAlignment="Left"   Height="262" Margin="255,154,0,0" VerticalAlignment="Top" Width="518" Background="White" Foreground="Black" BorderBrush="#B53232" BorderThickness="3" >
+        <ListBox x:Name="BasketLB" HorizontalAlignment="Left"   Height="262" Margin="255,154,0,0" VerticalAlignment="Top" Width="518" Background="White" Foreground="Black" BorderBrush="#B53232" BorderThickness="3" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel x:Name="Basket_StackPanel" Margin="5" Orientation="Horizontal">

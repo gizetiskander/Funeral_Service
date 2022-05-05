@@ -23,10 +23,6 @@ namespace Funeral_Service_1.Views
     public partial class PaymentPage : Page
     {
         public static Service service = new Service();
-        Payment payment;
-        Service serv;
-        PaymentType paymentType;
-        Basket basket;
         public static Funeral_Service_dbEntities dbEntities = new Funeral_Service_dbEntities();
         
 
@@ -49,17 +45,20 @@ namespace Funeral_Service_1.Views
             }
             else
             {
+                Basket basket = new Basket();
+                basket.ID_User = AuthWindow.authUser.ID_User;
+                basket.ID_Product = PayProductPage.prod.ID_Product;
+                basket.Count = 1;
                 Payment payment = new Payment();
                 PaymentType paymentType = new PaymentType();
                 payment.Card = Card.Text;
                 payment.Name_Payment = UserName.Text;
                 payment.ID_User = AuthWindow.authUser.ID_User;
-                payment.Name_Payment = PaymentCB.Text;
                 payment.Paid = true;
                 PaymentPage.dbEntities.Payment.Add(payment);
                 PaymentPage.dbEntities.SaveChanges();
                 MessageBox.Show("Успешно!");
-                NavigationService.Navigate(new MainPage());
+                NavigationService.Navigate(new BucketPage());
             }
         }
 
@@ -85,6 +84,13 @@ namespace Funeral_Service_1.Views
         {
             var graveName = ((Graveyard)GraveCB.SelectedItem).Graveyard_Name;
             var graveyard = PaymentPage.dbEntities.Graveyard.Where(x => x.Graveyard_Name == graveName).FirstOrDefault();
+        }
+
+        private void ServiceCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var serName = ((Service)ServiceCB.SelectedItem).Service_Name;
+            var service = PaymentPage.dbEntities.Service.Where(x => x.Service_Name == serName).FirstOrDefault();
+            Price.Text = service.Service_Price.ToString();
         }
     }
 }

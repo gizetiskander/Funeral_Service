@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Funeral_Service_1.db;
 
 namespace Funeral_Service_1.Views
 {
@@ -19,6 +20,8 @@ namespace Funeral_Service_1.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Funeral_Service_dbEntities dbEntities = new Funeral_Service_dbEntities();
+        public static C_User authUser;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +31,18 @@ namespace Funeral_Service_1.Views
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btn_Admin_Initialized(object sender, EventArgs e)
+        {
+            if (AuthWindow.authUser.ID_Role == 1)
+            {
+                btn_Admin.Visibility = Visibility.Hidden;
+            }
+            else if (AuthWindow.authUser.ID_Role == 2)
+            {
+                btn_Admin.Visibility = Visibility.Visible;
+            }
         }
     }
 }

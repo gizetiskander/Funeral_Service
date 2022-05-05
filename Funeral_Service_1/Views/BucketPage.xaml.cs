@@ -23,11 +23,13 @@ namespace Funeral_Service_1.Views
     public partial class BucketPage : Page
     {
         public static Funeral_Service_dbEntities dbEntities = new Funeral_Service_dbEntities();
+        public static C_User authUser;
         public BucketPage()
         {
             dbEntities = new Funeral_Service_dbEntities();
             InitializeComponent();
 
+            BasketLB.ItemsSource = BucketPage.dbEntities.Basket.Where(x => x.ID_User == AuthWindow.authUser.ID_User).ToList();
         }
     }
 }

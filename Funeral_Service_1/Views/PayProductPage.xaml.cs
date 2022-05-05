@@ -23,6 +23,9 @@ namespace Funeral_Service_1.Views
     {
         public static Funeral_Service_dbEntities dbEntities = new Funeral_Service_dbEntities();
         public static C_User authUser;
+        public static PaymentType paymentType = new PaymentType();
+        public static Basket bask;
+        public static Product prod;
         public PayProductPage()
         {
             InitializeComponent();
@@ -31,7 +34,8 @@ namespace Funeral_Service_1.Views
                 ProductCB.ItemsSource = dbEntities.Product.Where(x => x.ID_Role == 1).ToList();
                 PaymentCB.ItemsSource = dbEntities.PaymentType.Where(x => x.ID_Role == 1).ToList();
 
-                PaymentCB.ItemsSource = dbEntities.PaymentProduct.ToList();
+
+               
             }
         }
 
@@ -49,16 +53,21 @@ namespace Funeral_Service_1.Views
             }
             else
             {
+                Basket basket = new Basket();
+                basket.ID_User = AuthWindow.authUser.ID_User;
+                basket.Count = 1;
+                PaymentPage.dbEntities.Basket.Add(basket);
+                PaymentPage.dbEntities.SaveChanges();
                 PaymentProduct payment = new PaymentProduct();
                 payment.Card = Card.Text;
                 payment.Name_PaymentProduct = UserName.Text;
                 payment.ID_User = AuthWindow.authUser.ID_User;
-                payment.PaymentType_Name = PaymentCB.SelectedItem as PaymentProduct;
                 payment.Paid = true;
                 PaymentPage.dbEntities.PaymentProduct.Add(payment);
                 PaymentPage.dbEntities.SaveChanges();
                 MessageBox.Show("Успешно!");
-                NavigationService.Navigate(new MainPage());
+                var bas = btn_Pay.DataContext as PaymentProduct;
+                NavigationService.Navigate(new BucketPage());
             }
         }
 

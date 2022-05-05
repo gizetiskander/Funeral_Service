@@ -87,7 +87,7 @@
         </Button>
         <ComboBox x:Name="ServiceCB" HorizontalAlignment="Left" Margin="471,161,0,0"   FontSize="10"
                   VerticalAlignment="Top" Width="149" Height="28" Background="White" Foreground="Black" BorderBrush="#B53232" 
-                  BorderThickness="3" >
+                  BorderThickness="3" SelectionChanged="ServiceCB_SelectionChanged" >
             <ComboBox.ItemTemplate >
                 <DataTemplate  >
                     <TextBlock Background="White" x:Name="Service_Name"  Text="{Binding Service_Name}"/>

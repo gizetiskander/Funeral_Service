@@ -38,6 +38,9 @@ namespace Funeral_Service_1.Views
                     {
                         MessageBox.Show($"Привет, админ: {user.User_Name}");
                         AuthWindow.authUser = user;
+                        MainWindow main = new MainWindow();
+                        this.Close();
+                        main.Show();
                     }
                     if (user.Password == Password.Text.Trim() && user.ID_Role == 1)
                     {
