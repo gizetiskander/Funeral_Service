@@ -16,12 +16,12 @@
                     <StackPanel x:Name="Basket_StackPanel" Margin="5" Orientation="Horizontal">
                         <TextBlock x:Name="Basket_Id" Text="{Binding ID_Basket}" HorizontalAlignment="Left" Margin="5,5,100,10"/>
                         <TextBlock x:Name="Basket_count" Text="{Binding Count}" HorizontalAlignment="Left"  Margin="5,5,90,10"/>
-                        <TextBlock x:Name="Service_id" Text="{Binding ID_Service}" HorizontalAlignment="Left"  Margin="5,5,50,10"/>
-                        <TextBlock x:Name="Date" Text="{Binding Date}" HorizontalAlignment="Left"  Margin="5"/>
+                        <TextBlock x:Name="Service_id" Text="{Binding Date}" HorizontalAlignment="Left"  Margin="5,5,50,10"/>
+                        <TextBlock x:Name="Date" Text="{Binding Done}" HorizontalAlignment="Left"  Margin="5"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock HorizontalAlignment="Left" Margin="265,159,0,0" TextWrapping="Wrap" Text="Номер заказа         Кол-во              Номер услуги      Дата " Background="White" VerticalAlignment="Top" Width="496"/>
+        <TextBlock HorizontalAlignment="Left" Margin="265,159,0,0" TextWrapping="Wrap" Background="White" VerticalAlignment="Top" Width="502"><Run Text="Номер заказа         Кол-во                    "/><Run Text=" "/><Run Text="      Дата"/><Run Text="                                            Выполнено"/><Run Text=" "/></TextBlock>
     </Grid>
 </Page>

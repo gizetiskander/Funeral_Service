@@ -14,7 +14,7 @@
                  VerticalAlignment="Top" Width="240" BorderBrush="#B53232" BorderThickness="5"/>
         <TextBlock HorizontalAlignment="Left" Margin="84,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular"
                    Foreground="Black" Text="Email" Height="29" Width="60" FontSize="24"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="46" FontSize="22" BorderBrush="#B53232" Background="White"  BorderThickness="5" Margin="84,506,0,0" 
+        <TextBox x:Name="Password"  HorizontalAlignment="Left" Height="46" FontSize="22" BorderBrush="#B53232" Background="White"  BorderThickness="5" Margin="84,506,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
         <TextBlock HorizontalAlignment="Left" Margin="84,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  FontFamily="Regular"
                    Foreground="Black" Text="Пароль " Height="26" Width="92" FontSize="24"/>
@@ -31,5 +31,16 @@
         </Button>
         <Rectangle Fill="#B53232" HorizontalAlignment="Left" Height="46"  VerticalAlignment="Top" Width="428" Grid.ColumnSpan="2"/>
         <Rectangle Fill="#B53232" HorizontalAlignment="Left" Height="42"  VerticalAlignment="Top" Width="422" Margin="0,830,0,0"/>
+        <Button x:Name="Sign_In" Content="Регистрация" Margin="92,687,80,125" Height="Auto" Click="Sign_In_Click" BorderBrush="Black" BorderThickness="5" >
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle RadiusX="10" RadiusY="10" Fill="#B53232" Stroke="Black" StrokeThickness="5"/>
+                        <Label Content="{TemplateBinding Content}"   Foreground="White" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontSize="24"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>

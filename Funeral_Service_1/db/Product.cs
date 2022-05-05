@@ -14,19 +14,11 @@ namespace Funeral_Service_1.db
     
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            this.Basket = new HashSet<Basket>();
-        }
-    
         public int ID_Product { get; set; }
         public string Product_Name { get; set; }
         public string Product_Price { get; set; }
         public Nullable<int> ID_Role { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Basket> Basket { get; set; }
         public virtual Role Role { get; set; }
     }
 }

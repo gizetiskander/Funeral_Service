@@ -47,8 +47,8 @@ namespace Funeral_Service_1.Views
             {
                 Basket basket = new Basket();
                 basket.ID_User = AuthWindow.authUser.ID_User;
-                basket.ID_Product = PayProductPage.prod.ID_Product;
                 basket.Count = 1;
+                basket.Done = false;
                 Payment payment = new Payment();
                 PaymentType paymentType = new PaymentType();
                 payment.Card = Card.Text;

@@ -56,6 +56,7 @@ namespace Funeral_Service_1.Views
                 Basket basket = new Basket();
                 basket.ID_User = AuthWindow.authUser.ID_User;
                 basket.Count = 1;
+                basket.Done = false;
                 PaymentPage.dbEntities.Basket.Add(basket);
                 PaymentPage.dbEntities.SaveChanges();
                 PaymentProduct payment = new PaymentProduct();

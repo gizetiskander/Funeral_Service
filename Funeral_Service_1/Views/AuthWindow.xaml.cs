@@ -53,5 +53,12 @@ namespace Funeral_Service_1.Views
                 }
             }
         }
+
+        private void Sign_In_Click(object sender, RoutedEventArgs e)
+        {
+            RegWindow reg = new RegWindow();
+            this.Close();
+            reg.Show();
+        }
     }
 }

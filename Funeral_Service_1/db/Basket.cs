@@ -16,16 +16,10 @@ namespace Funeral_Service_1.db
     {
         public int ID_Basket { get; set; }
         public Nullable<int> Count { get; set; }
-        public Nullable<int> ID_Service { get; set; }
-        public Nullable<int> ID_Graveyard { get; set; }
-        public Nullable<int> ID_Product { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> ID_User { get; set; }
         public Nullable<bool> Done { get; set; }
     
         public virtual C_User C_User { get; set; }
-        public virtual Graveyard Graveyard { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Service Service { get; set; }
     }
 }

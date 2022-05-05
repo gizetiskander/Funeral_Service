@@ -4,29 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="87bcc22d3a1942b684d2eefd720587ea" Name="Diagram1">
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.C_User" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Basket" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Graveyard" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Payment" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.PaymentType" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Product" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Role" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.Service" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+      <Diagram DiagramId="34674f201a58444d882d2c27bb14a756" Name="Diagram1">
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.C_User" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Basket" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Graveyard" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Payment" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.PaymentProduct" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.PaymentType" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Product" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Role" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Funeral_Service_dbModel.Service" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Funeral_Service_dbModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK__User_Role" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket__User" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Payment__User" ManuallyRouted="false" />
-        <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket_Graveyard" ManuallyRouted="false" />
-        <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="Funeral_Service_dbModel.FK_Basket_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="Funeral_Service_dbModel.FK_PaymentProduct__User" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Graveyard_Role" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Graveyard_Service" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_PaymentType_Role" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Product_Role" ManuallyRouted="false" />
         <AssociationConnector Association="Funeral_Service_dbModel.FK_Service_Role" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Funeral_Service_dbModel.PaymentProduct" Width="1.5" PointX="5.25" PointY="5.375" />
-        <AssociationConnector Association="Funeral_Service_dbModel.FK_PaymentProduct__User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
