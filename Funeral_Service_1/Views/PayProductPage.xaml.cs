@@ -30,6 +30,8 @@ namespace Funeral_Service_1.Views
             {
                 ProductCB.ItemsSource = dbEntities.Product.Where(x => x.ID_Role == 1).ToList();
                 PaymentCB.ItemsSource = dbEntities.PaymentType.Where(x => x.ID_Role == 1).ToList();
+
+                PaymentCB.ItemsSource = dbEntities.PaymentProduct.ToList();
             }
         }
 
@@ -41,7 +43,23 @@ namespace Funeral_Service_1.Views
 
         private void btn_Pay_Click(object sender, RoutedEventArgs e)
         {
-
+            if (UserName.Text == "" || Card.Text == "")
+            {
+                MessageBox.Show("Введите ваши данные!");
+            }
+            else
+            {
+                PaymentProduct payment = new PaymentProduct();
+                payment.Card = Card.Text;
+                payment.Name_PaymentProduct = UserName.Text;
+                payment.ID_User = AuthWindow.authUser.ID_User;
+                payment.PaymentType_Name = PaymentCB.SelectedItem as PaymentProduct;
+                payment.Paid = true;
+                PaymentPage.dbEntities.PaymentProduct.Add(payment);
+                PaymentPage.dbEntities.SaveChanges();
+                MessageBox.Show("Успешно!");
+                NavigationService.Navigate(new MainPage());
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

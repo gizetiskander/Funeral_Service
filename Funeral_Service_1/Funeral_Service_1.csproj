@@ -136,6 +136,9 @@
     <Compile Include="db\Payment.cs">
       <DependentUpon>FuneralServiceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="db\PaymentProduct.cs">
+      <DependentUpon>FuneralServiceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="db\PaymentType.cs">
       <DependentUpon>FuneralServiceModel.tt</DependentUpon>
     </Compile>
@@ -233,7 +236,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="db\FuneralServiceModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
+      <LastGenOutput>FuneralServiceModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\FuneralServiceModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
+      <LastGenOutput>FuneralServiceModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AuthWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -309,16 +323,6 @@
     <Resource Include="Views\Res\Subjects\youtube.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db\FuneralServiceModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FuneralServiceModel.Context.cs</LastGenOutput>
-      <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="db\FuneralServiceModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FuneralServiceModel.edmx</DependentUpon>
-      <LastGenOutput>FuneralServiceModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Views\Res\Subjects\coin.png" />
     <Resource Include="Views\Res\Background\cremauiaBackground.png" />
     <Resource Include="Views\Res\Background\embalmBackground.png" />

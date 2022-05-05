@@ -32,7 +32,7 @@
             Foreground="Black" Text="Товар" Height="17" Width="55" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="295,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
             Foreground="Black" Text="Способы оплаты" Height="17" Width="113" RenderTransformOrigin="0.963,9.875" FontSize="14"/>
-        <TextBox x:Name="UserName_Copy3" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="471,247,0,0" Background="White" TextWrapping="Wrap" Text="" 
+        <TextBox x:Name="Card" HorizontalAlignment="Left" Height="28" FontSize="20" Margin="471,247,0,0" Background="White" TextWrapping="Wrap" Text="" 
             VerticalAlignment="Top" Width="155" BorderBrush="#B53232" BorderThickness="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="471,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Regular" 
             Foreground="Black" Height="17" Width="155" RenderTransformOrigin="0.963,9.875" FontSize="14"><Run Text="Номер Карты"/><Run Text="\Телефона"/></TextBlock>

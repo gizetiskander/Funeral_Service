@@ -28,7 +28,7 @@ namespace Funeral_Service_1.db
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Basket> Basket { get; set; }
-        public virtual Service Service { get; set; }
         public virtual Role Role { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

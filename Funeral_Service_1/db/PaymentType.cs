@@ -14,18 +14,10 @@ namespace Funeral_Service_1.db
     
     public partial class PaymentType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PaymentType()
-        {
-            this.Payment = new HashSet<Payment>();
-        }
-    
         public int ID_PaymentType { get; set; }
         public string Name_PaymentType { get; set; }
         public Nullable<int> ID_Role { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Payment> Payment { get; set; }
         public virtual Role Role { get; set; }
     }
 }

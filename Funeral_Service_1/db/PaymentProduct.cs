@@ -12,19 +12,16 @@ namespace Funeral_Service_1.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Basket
+    public partial class PaymentProduct
     {
-        public int ID_Basket { get; set; }
-        public Nullable<int> Count { get; set; }
-        public Nullable<int> ID_Service { get; set; }
-        public Nullable<int> ID_Graveyard { get; set; }
-        public Nullable<int> ID_Product { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public int ID_PaymentProduct { get; set; }
+        public Nullable<System.DateTime> Date_PaymentProduct { get; set; }
+        public string Card { get; set; }
+        public string Name_PaymentProduct { get; set; }
+        public string PaymentType_Name { get; set; }
+        public Nullable<bool> Paid { get; set; }
         public Nullable<int> ID_User { get; set; }
     
         public virtual C_User C_User { get; set; }
-        public virtual Graveyard Graveyard { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Service Service { get; set; }
     }
 }

@@ -29,10 +29,11 @@ namespace Funeral_Service_1.db
         public virtual DbSet<Basket> Basket { get; set; }
         public virtual DbSet<Graveyard> Graveyard { get; set; }
         public virtual DbSet<Payment> Payment { get; set; }
+        public virtual DbSet<PaymentType> PaymentType { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<PaymentType> PaymentType { get; set; }
+        public virtual DbSet<PaymentProduct> PaymentProduct { get; set; }
     }
 }

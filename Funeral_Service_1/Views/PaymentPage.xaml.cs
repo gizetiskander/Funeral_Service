@@ -28,6 +28,7 @@ namespace Funeral_Service_1.Views
         PaymentType paymentType;
         Basket basket;
         public static Funeral_Service_dbEntities dbEntities = new Funeral_Service_dbEntities();
+        
 
         public PaymentPage()
         {
@@ -49,9 +50,11 @@ namespace Funeral_Service_1.Views
             else
             {
                 Payment payment = new Payment();
+                PaymentType paymentType = new PaymentType();
                 payment.Card = Card.Text;
                 payment.Name_Payment = UserName.Text;
                 payment.ID_User = AuthWindow.authUser.ID_User;
+                payment.Name_Payment = PaymentCB.Text;
                 payment.Paid = true;
                 PaymentPage.dbEntities.Payment.Add(payment);
                 PaymentPage.dbEntities.SaveChanges();
