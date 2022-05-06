@@ -86,6 +86,34 @@ namespace Funeral_Service_1.Views
             }
         }
 
-     
+        private void btn_Next_Click(object sender, RoutedEventArgs e)
+        {
+            AdminList.ItemsSource = dbEntities.Service.ToList();
+            ID.DisplayMemberBinding = new Binding("ID_Service");
+            ID.Header = "ID_Service";
+            ID.Width = 100;
+            Name.DisplayMemberBinding = new Binding("Service_Name");
+            Name.Header = "Service_Name";
+            Name.Width = 100;
+            Image.DisplayMemberBinding = new Binding("Service_Price");
+            Image.Header = "Service_Price";
+            Image.Width = 100;
+            table_Name.Text = "Услуги";
+        }
+
+        private void btn_Back_Click(object sender, RoutedEventArgs e)
+        {
+            AdminList.ItemsSource = dbEntities.C_User.ToList();
+            ID.DisplayMemberBinding = new Binding("ID_User");
+            ID.Header = "ID_User";
+            ID.Width = 100;
+            Name.DisplayMemberBinding = new Binding("User_Name");
+            Name.Header = "User_Name";
+            Name.Width = 100;
+            Image.DisplayMemberBinding = new Binding("User_Image");
+            Image.Header = "User_Image";
+            Image.Width = 100;
+            table_Name.Text = "Пользователи";
+        }
     }
 }

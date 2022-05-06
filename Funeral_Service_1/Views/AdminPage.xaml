@@ -36,9 +36,9 @@
                   Margin="472,193,0,0" VerticalAlignment="Top" Width="318">
             <ListView.View>
                 <GridView  >
-                    <GridViewColumn  DisplayMemberBinding="{Binding ID_User}"
+                    <GridViewColumn x:Name="ID"  DisplayMemberBinding="{Binding ID_User}"
                       Header="ID_User" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding User_Name}" 
+                    <GridViewColumn x:Name="Name" DisplayMemberBinding="{Binding User_Name}" 
                       Header="User_Name" Width="100"/>
                     <GridViewColumn x:Name="Image" Header="User_Image" Width="100">
                         <GridViewColumn.CellTemplate>
@@ -54,8 +54,18 @@
         <Button x:Name="btn_Del" Content="Ban" Click="btn_Del_Click" HorizontalAlignment="Left" BorderBrush="Black" Background="#B53232" Margin="327,358,0,0" VerticalAlignment="Top" Width="75"/>
         <materialDesign:Card x:Name="Users"   HorizontalAlignment="Left" Background="White" Margin="472,169,0,0" VerticalAlignment="Top" Width="318" Height="19">
             <StackPanel>
-                <TextBlock TextWrapping="Wrap" Text="Пользователи" VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Margin="112,0,93,0" />
+                <TextBlock x:Name="table_Name" TextWrapping="Wrap" Text="Пользователи" VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Margin="112,0,114,0" />
             </StackPanel>
         </materialDesign:Card>
+        <Button x:Name="btn_Next" Click="btn_Next_Click"  HorizontalAlignment="Left" Margin="768,169,0,0" BorderBrush="Transparent" VerticalAlignment="Top" Width="22" Height="19">
+            <Button.Background >
+                <ImageBrush ImageSource="Res/Icons/open.png"  />
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_Back" Click="btn_Back_Click"  HorizontalAlignment="Left" Margin="472,169,0,0" BorderBrush="Transparent" VerticalAlignment="Top" Width="22" Height="19">
+            <Button.Background >
+                <ImageBrush ImageSource="Res/Icons/close.png"  />
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
