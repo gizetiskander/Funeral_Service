@@ -32,17 +32,18 @@
                 <TextBlock x:Name="Card2" Text="" FontSize="20" FontFamily="Regular" FontWeight="Bold" Height="19" Margin="10,0,37,0" />
             </StackPanel>
         </materialDesign:Card>
-        <ListView x:Name="AdminList" HorizontalAlignment="Left" Height="247" Background="White" Foreground="Black" BorderBrush="#B53232" Margin="472,193,0,0" VerticalAlignment="Top" Width="279">
+        <ListView x:Name="AdminList" HorizontalAlignment="Left" FontSize="10"  Height="247" Background="White" Foreground="Black" BorderBrush="#B53232" 
+                  Margin="472,193,0,0" VerticalAlignment="Top" Width="318">
             <ListView.View>
                 <GridView  >
                     <GridViewColumn  DisplayMemberBinding="{Binding ID_User}"
-                      Header="ID_User" Width="50"/>
+                      Header="ID_User" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding User_Name}" 
-                      Header="User_Name" Width="50"/>
-                    <GridViewColumn x:Name="Image" Header="User_Image" Width="50">
+                      Header="User_Name" Width="100"/>
+                    <GridViewColumn x:Name="Image" Header="User_Image" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image x:Name="image_1" Source="{Binding User_Image}"/>
+                                <Image x:Name="image_1" Source="{Binding User_Image}" Width="50"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -51,13 +52,10 @@
         </ListView>
         <Button x:Name="btn_Save" Content="Save"  Click="btn_Save_Click" HorizontalAlignment="Left" BorderBrush="Black" Background="#B53232" Margin="327,298,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btn_Del" Content="Ban" Click="btn_Del_Click" HorizontalAlignment="Left" BorderBrush="Black" Background="#B53232" Margin="327,358,0,0" VerticalAlignment="Top" Width="75"/>
-        <materialDesign:Card x:Name="Users"   HorizontalAlignment="Left" Background="White" Margin="472,169,0,0" VerticalAlignment="Top" Width="279" Height="19">
+        <materialDesign:Card x:Name="Users"   HorizontalAlignment="Left" Background="White" Margin="472,169,0,0" VerticalAlignment="Top" Width="318" Height="19">
             <StackPanel>
-                <TextBlock TextWrapping="Wrap" Text="Пользователи" VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Margin="93,0" />
+                <TextBlock TextWrapping="Wrap" Text="Пользователи" VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Margin="112,0,93,0" />
             </StackPanel>
         </materialDesign:Card>
-
-
-
     </Grid>
 </Page>
